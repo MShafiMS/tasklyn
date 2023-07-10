@@ -1,0 +1,28 @@
+type Todo @model {
+  id: ID!
+  name: String!
+  description: String
+}
+
+type UserProfile
+  @model
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "id" }
+      { allow: private, operations: [read, update] }
+      { allow: public, provider: iam, operations: [create] }
+    ]
+  ) {
+  id: ID! @primaryKey
+  name: String!
+  email: String! @index(name: "byEmail", queryField: "appUserByEmail")
+  profilePics: String
+  username: String
+  profilePicture: String
+  country: String
+  state: String
+  city: String
+  bio: String
+  config: AWSJSON
+  createdAt: AWSDateTime!
+}

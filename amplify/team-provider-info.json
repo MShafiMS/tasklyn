@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tasklyn-dev-124249-authRole",
+      "UnauthRoleArn": "arn:aws:iam::052817252990:role/amplify-tasklyn-dev-124249-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::052817252990:role/amplify-tasklyn-dev-124249-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-tasklyn-dev-124249-deployment",
+      "UnauthRoleName": "amplify-tasklyn-dev-124249-unauthRole",
+      "StackName": "amplify-tasklyn-dev-124249",
+      "StackId": "arn:aws:cloudformation:us-east-1:052817252990:stack/amplify-tasklyn-dev-124249/02a5d950-1eed-11ee-b163-12c1682ee2fb",
+      "AmplifyAppId": "dmgu1w3l5q2pn"
+    },
+    "categories": {
+      "api": {
+        "tasklyn": {}
+      },
+      "auth": {
+        "tasklynef5e3935": {}
+      }
+    }
+  }
+}
