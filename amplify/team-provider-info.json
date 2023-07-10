@@ -12,11 +12,11 @@
       "AmplifyAppId": "dmgu1w3l5q2pn"
     },
     "categories": {
-      "api": {
-        "tasklyn": {}
-      },
       "auth": {
         "tasklynef5e3935": {}
+      },
+      "api": {
+        "tasklyn": {}
       }
     }
   }

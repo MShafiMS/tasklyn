@@ -1,3 +1,4 @@
+/* tslint:disable */
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
@@ -8,10 +9,11 @@ export const createTodo = /* GraphQL */ `
   ) {
     createTodo(input: $input, condition: $condition) {
       id
-      name
+      title
       description
-      createdAt
+      status
       updatedAt
+      createdAt
     }
   }
 `;
@@ -22,10 +24,11 @@ export const updateTodo = /* GraphQL */ `
   ) {
     updateTodo(input: $input, condition: $condition) {
       id
-      name
+      title
       description
-      createdAt
+      status
       updatedAt
+      createdAt
     }
   }
 `;
@@ -36,10 +39,11 @@ export const deleteTodo = /* GraphQL */ `
   ) {
     deleteTodo(input: $input, condition: $condition) {
       id
-      name
+      title
       description
-      createdAt
+      status
       updatedAt
+      createdAt
     }
   }
 `;
@@ -52,8 +56,6 @@ export const updateUserProfile = /* GraphQL */ `
       id
       name
       email
-      profilePics
-      username
       profilePicture
       country
       state
@@ -74,8 +76,6 @@ export const deleteUserProfile = /* GraphQL */ `
       id
       name
       email
-      profilePics
-      username
       profilePicture
       country
       state
@@ -96,8 +96,6 @@ export const createUserProfile = /* GraphQL */ `
       id
       name
       email
-      profilePics
-      username
       profilePicture
       country
       state

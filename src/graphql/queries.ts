@@ -1,3 +1,4 @@
+/* tslint:disable */
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
@@ -5,10 +6,11 @@ export const getTodo = /* GraphQL */ `
   query GetTodo($id: ID!) {
     getTodo(id: $id) {
       id
-      name
+      title
       description
-      createdAt
+      status
       updatedAt
+      createdAt
     }
   }
 `;
@@ -21,10 +23,11 @@ export const listTodos = /* GraphQL */ `
     listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        name
+        title
         description
-        createdAt
+        status
         updatedAt
+        createdAt
       }
       nextToken
     }
@@ -36,8 +39,6 @@ export const getUserProfile = /* GraphQL */ `
       id
       name
       email
-      profilePics
-      username
       profilePicture
       country
       state
@@ -68,8 +69,6 @@ export const listUserProfiles = /* GraphQL */ `
         id
         name
         email
-        profilePics
-        username
         profilePicture
         country
         state
@@ -102,8 +101,6 @@ export const appUserByEmail = /* GraphQL */ `
         id
         name
         email
-        profilePics
-        username
         profilePicture
         country
         state

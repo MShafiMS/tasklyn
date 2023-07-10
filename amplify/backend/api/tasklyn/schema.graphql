@@ -1,7 +1,16 @@
+enum TaskStatus {
+  TO_DO
+  IN_PROGRESS
+  COMPLETED
+}
+
 type Todo @model {
   id: ID!
-  name: String!
-  description: String
+  title: String!
+  description: String!
+  status: TaskStatus!
+  updatedAt: String
+  createdAt: String
 }
 
 type UserProfile
@@ -16,13 +25,11 @@ type UserProfile
   id: ID! @primaryKey
   name: String!
   email: String! @index(name: "byEmail", queryField: "appUserByEmail")
-  profilePics: String
-  username: String
   profilePicture: String
   country: String
   state: String
   city: String
   bio: String
   config: AWSJSON
-  createdAt: AWSDateTime!
+  createdAt: String
 }
