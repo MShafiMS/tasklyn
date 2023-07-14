@@ -1,17 +1,13 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "tasklynef5e3935_identitypool_ef5e3935",
-    "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "tasklyef5e3935",
-    "userPoolName": "tasklynef5e3935_userpool_ef5e3935",
-    "autoVerifiedAttributes": [
-      "email"
-    ],
+    "identityPoolName": "tasklyn0924a8ce_identitypool_0924a8ce",
+    "allowUnauthenticatedIdentities": true,
+    "resourceNameTruncated": "taskly0924a8ce",
+    "userPoolName": "tasklyn0924a8ce_userpool_0924a8ce",
+    "autoVerifiedAttributes": ["email"],
     "mfaConfiguration": "OFF",
-    "mfaTypes": [
-      "SMS Text Message"
-    ],
+    "mfaTypes": ["SMS Text Message"],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
     "emailVerificationSubject": "Your verification code",
@@ -19,27 +15,19 @@
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
-    "requiredAttributes": [
-      "email"
-    ],
+    "requiredAttributes": ["email"],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
-    "userpoolClientWriteAttributes": [
-      "email"
-    ],
-    "userpoolClientReadAttributes": [
-      "email"
-    ],
-    "userpoolClientLambdaRole": "tasklyef5e3935_userpoolclient_lambda_role",
+    "userpoolClientWriteAttributes": ["email"],
+    "userpoolClientReadAttributes": ["email"],
+    "userpoolClientLambdaRole": "taskly0924a8ce_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "ef5e3935",
-    "resourceName": "tasklynef5e3935",
+    "sharedId": "0924a8ce",
+    "resourceName": "tasklyn0924a8ce",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
-    "usernameAttributes": [
-      "email"
-    ],
+    "usernameAttributes": ["email"],
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,

@@ -2,6 +2,48 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const updateUserDetails = /* GraphQL */ `
+  mutation UpdateUserDetails(
+    $input: UpdateUserDetailsInput!
+    $condition: ModelUserDetailsConditionInput
+  ) {
+    updateUserDetails(input: $input, condition: $condition) {
+      id
+      firstName
+      lastName
+      email
+      profilePicture
+      country
+      state
+      city
+      bio
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteUserDetails = /* GraphQL */ `
+  mutation DeleteUserDetails(
+    $input: DeleteUserDetailsInput!
+    $condition: ModelUserDetailsConditionInput
+  ) {
+    deleteUserDetails(input: $input, condition: $condition) {
+      id
+      firstName
+      lastName
+      email
+      profilePicture
+      country
+      state
+      city
+      bio
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const createTodo = /* GraphQL */ `
   mutation CreateTodo(
     $input: CreateTodoInput!
@@ -9,11 +51,13 @@ export const createTodo = /* GraphQL */ `
   ) {
     createTodo(input: $input, condition: $condition) {
       id
-      title
+      name
       description
       status
-      updatedAt
       createdAt
+      updatedAt
+      owner
+      __typename
     }
   }
 `;
@@ -24,11 +68,13 @@ export const updateTodo = /* GraphQL */ `
   ) {
     updateTodo(input: $input, condition: $condition) {
       id
-      title
+      name
       description
       status
-      updatedAt
       createdAt
+      updatedAt
+      owner
+      __typename
     }
   }
 `;
@@ -39,71 +85,34 @@ export const deleteTodo = /* GraphQL */ `
   ) {
     deleteTodo(input: $input, condition: $condition) {
       id
-      title
+      name
       description
       status
-      updatedAt
       createdAt
+      updatedAt
+      owner
+      __typename
     }
   }
 `;
-export const updateUserProfile = /* GraphQL */ `
-  mutation UpdateUserProfile(
-    $input: UpdateUserProfileInput!
-    $condition: ModelUserProfileConditionInput
+export const createUserDetails = /* GraphQL */ `
+  mutation CreateUserDetails(
+    $input: CreateUserDetailsInput!
+    $condition: ModelUserDetailsConditionInput
   ) {
-    updateUserProfile(input: $input, condition: $condition) {
+    createUserDetails(input: $input, condition: $condition) {
       id
-      name
+      firstName
+      lastName
       email
       profilePicture
       country
       state
       city
       bio
-      config
       createdAt
       updatedAt
-    }
-  }
-`;
-export const deleteUserProfile = /* GraphQL */ `
-  mutation DeleteUserProfile(
-    $input: DeleteUserProfileInput!
-    $condition: ModelUserProfileConditionInput
-  ) {
-    deleteUserProfile(input: $input, condition: $condition) {
-      id
-      name
-      email
-      profilePicture
-      country
-      state
-      city
-      bio
-      config
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createUserProfile = /* GraphQL */ `
-  mutation CreateUserProfile(
-    $input: CreateUserProfileInput!
-    $condition: ModelUserProfileConditionInput
-  ) {
-    createUserProfile(input: $input, condition: $condition) {
-      id
-      name
-      email
-      profilePicture
-      country
-      state
-      city
-      bio
-      config
-      createdAt
-      updatedAt
+      __typename
     }
   }
 `;

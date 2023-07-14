@@ -2,99 +2,117 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateTodo = /* GraphQL */ `
-  subscription OnCreateTodo($filter: ModelSubscriptionTodoFilterInput) {
-    onCreateTodo(filter: $filter) {
+export const onCreateUserDetails = /* GraphQL */ `
+  subscription OnCreateUserDetails(
+    $filter: ModelSubscriptionUserDetailsFilterInput
+    $id: String
+  ) {
+    onCreateUserDetails(filter: $filter, id: $id) {
       id
-      title
+      firstName
+      lastName
+      email
+      profilePicture
+      country
+      state
+      city
+      bio
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateUserDetails = /* GraphQL */ `
+  subscription OnUpdateUserDetails(
+    $filter: ModelSubscriptionUserDetailsFilterInput
+    $id: String
+  ) {
+    onUpdateUserDetails(filter: $filter, id: $id) {
+      id
+      firstName
+      lastName
+      email
+      profilePicture
+      country
+      state
+      city
+      bio
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteUserDetails = /* GraphQL */ `
+  subscription OnDeleteUserDetails(
+    $filter: ModelSubscriptionUserDetailsFilterInput
+    $id: String
+  ) {
+    onDeleteUserDetails(filter: $filter, id: $id) {
+      id
+      firstName
+      lastName
+      email
+      profilePicture
+      country
+      state
+      city
+      bio
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onCreateTodo = /* GraphQL */ `
+  subscription OnCreateTodo(
+    $filter: ModelSubscriptionTodoFilterInput
+    $owner: String
+  ) {
+    onCreateTodo(filter: $filter, owner: $owner) {
+      id
+      name
       description
       status
-      updatedAt
       createdAt
+      updatedAt
+      owner
+      __typename
     }
   }
 `;
 export const onUpdateTodo = /* GraphQL */ `
-  subscription OnUpdateTodo($filter: ModelSubscriptionTodoFilterInput) {
-    onUpdateTodo(filter: $filter) {
+  subscription OnUpdateTodo(
+    $filter: ModelSubscriptionTodoFilterInput
+    $owner: String
+  ) {
+    onUpdateTodo(filter: $filter, owner: $owner) {
       id
-      title
+      name
       description
       status
-      updatedAt
       createdAt
+      updatedAt
+      owner
+      __typename
     }
   }
 `;
 export const onDeleteTodo = /* GraphQL */ `
-  subscription OnDeleteTodo($filter: ModelSubscriptionTodoFilterInput) {
-    onDeleteTodo(filter: $filter) {
+  subscription OnDeleteTodo(
+    $filter: ModelSubscriptionTodoFilterInput
+    $owner: String
+  ) {
+    onDeleteTodo(filter: $filter, owner: $owner) {
       id
-      title
+      name
       description
       status
-      updatedAt
-      createdAt
-    }
-  }
-`;
-export const onCreateUserProfile = /* GraphQL */ `
-  subscription OnCreateUserProfile(
-    $filter: ModelSubscriptionUserProfileFilterInput
-    $id: String
-  ) {
-    onCreateUserProfile(filter: $filter, id: $id) {
-      id
-      name
-      email
-      profilePicture
-      country
-      state
-      city
-      bio
-      config
       createdAt
       updatedAt
-    }
-  }
-`;
-export const onUpdateUserProfile = /* GraphQL */ `
-  subscription OnUpdateUserProfile(
-    $filter: ModelSubscriptionUserProfileFilterInput
-    $id: String
-  ) {
-    onUpdateUserProfile(filter: $filter, id: $id) {
-      id
-      name
-      email
-      profilePicture
-      country
-      state
-      city
-      bio
-      config
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteUserProfile = /* GraphQL */ `
-  subscription OnDeleteUserProfile(
-    $filter: ModelSubscriptionUserProfileFilterInput
-    $id: String
-  ) {
-    onDeleteUserProfile(filter: $filter, id: $id) {
-      id
-      name
-      email
-      profilePicture
-      country
-      state
-      city
-      bio
-      config
-      createdAt
-      updatedAt
+      owner
+      __typename
     }
   }
 `;

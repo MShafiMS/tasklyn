@@ -2,15 +2,61 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getUserDetails = /* GraphQL */ `
+  query GetUserDetails($id: ID!) {
+    getUserDetails(id: $id) {
+      id
+      firstName
+      lastName
+      email
+      profilePicture
+      country
+      state
+      city
+      bio
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listUserDetails = /* GraphQL */ `
+  query ListUserDetails(
+    $filter: ModelUserDetailsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUserDetails(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        firstName
+        lastName
+        email
+        profilePicture
+        country
+        state
+        city
+        bio
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
 export const getTodo = /* GraphQL */ `
   query GetTodo($id: ID!) {
     getTodo(id: $id) {
       id
-      title
+      name
       description
       status
-      updatedAt
       createdAt
+      updatedAt
+      owner
+      __typename
     }
   }
 `;
@@ -23,74 +69,28 @@ export const listTodos = /* GraphQL */ `
     listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        title
+        name
         description
         status
-        updatedAt
-        createdAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getUserProfile = /* GraphQL */ `
-  query GetUserProfile($id: ID!) {
-    getUserProfile(id: $id) {
-      id
-      name
-      email
-      profilePicture
-      country
-      state
-      city
-      bio
-      config
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listUserProfiles = /* GraphQL */ `
-  query ListUserProfiles(
-    $id: ID
-    $filter: ModelUserProfileFilterInput
-    $limit: Int
-    $nextToken: String
-    $sortDirection: ModelSortDirection
-  ) {
-    listUserProfiles(
-      id: $id
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      sortDirection: $sortDirection
-    ) {
-      items {
-        id
-        name
-        email
-        profilePicture
-        country
-        state
-        city
-        bio
-        config
         createdAt
         updatedAt
+        owner
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;
-export const appUserByEmail = /* GraphQL */ `
-  query AppUserByEmail(
+export const userByEmail = /* GraphQL */ `
+  query UserByEmail(
     $email: String!
     $sortDirection: ModelSortDirection
-    $filter: ModelUserProfileFilterInput
+    $filter: ModelUserDetailsFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    appUserByEmail(
+    userByEmail(
       email: $email
       sortDirection: $sortDirection
       filter: $filter
@@ -99,18 +99,20 @@ export const appUserByEmail = /* GraphQL */ `
     ) {
       items {
         id
-        name
+        firstName
+        lastName
         email
         profilePicture
         country
         state
         city
         bio
-        config
         createdAt
         updatedAt
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;

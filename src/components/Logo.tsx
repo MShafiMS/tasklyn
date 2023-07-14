@@ -1,4 +1,4 @@
-const Logo = ({ size }: { size?: string }) => {
+const Logo = ({ size, auth }: { size?: string; auth?: boolean }) => {
   return (
     <div>
       <svg
@@ -18,7 +18,9 @@ const Logo = ({ size }: { size?: string }) => {
           width="40"
           height="19"
           rx="9.5"
-          className="dark:fill-[#161C2C] fill-white"
+          className={`dark:fill-[#161C2C] fill-white ${
+            auth && "fill-[#161c2c]"
+          }`}
         />
         <rect
           x="42"
@@ -26,7 +28,9 @@ const Logo = ({ size }: { size?: string }) => {
           width="115"
           height="19"
           rx="9.5"
-          className="dark:fill-[#161C2C] fill-white"
+          className={`dark:fill-[#161C2C] fill-white ${
+            auth && "fill-[#161c2c]"
+          }`}
         />
         <rect
           x="42"
@@ -34,7 +38,9 @@ const Logo = ({ size }: { size?: string }) => {
           width="115"
           height="19"
           rx="9.5"
-          className="dark:fill-[#161C2C] fill-white"
+          className={`dark:fill-[#161C2C] fill-white ${
+            auth && "fill-[#161c2c]"
+          }`}
         />
         <rect
           x="42"
@@ -42,7 +48,9 @@ const Logo = ({ size }: { size?: string }) => {
           width="90"
           height="19"
           rx="9.5"
-          className="dark:fill-[#161C2C] fill-white"
+          className={`dark:fill-[#161C2C] fill-white ${
+            auth && "fill-[#161c2c]"
+          }`}
         />
         <defs>
           <linearGradient

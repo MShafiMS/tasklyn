@@ -2,31 +2,30 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateTodoInput = {
-  id?: string | null,
-  title: string,
-  description: string,
-  status: TaskStatus,
-  updatedAt?: string | null,
-  createdAt?: string | null,
+export type UpdateUserDetailsInput = {
+  id: string,
+  firstName?: string | null,
+  lastName?: string | null,
+  email?: string | null,
+  profilePicture?: string | null,
+  country?: string | null,
+  state?: string | null,
+  city?: string | null,
+  bio?: string | null,
 };
 
-export enum TaskStatus {
-  TO_DO = "TO_DO",
-  IN_PROGRESS = "IN_PROGRESS",
-  COMPLETED = "COMPLETED",
-}
-
-
-export type ModelTodoConditionInput = {
-  title?: ModelStringInput | null,
-  description?: ModelStringInput | null,
-  status?: ModelTaskStatusInput | null,
-  updatedAt?: ModelStringInput | null,
-  createdAt?: ModelStringInput | null,
-  and?: Array< ModelTodoConditionInput | null > | null,
-  or?: Array< ModelTodoConditionInput | null > | null,
-  not?: ModelTodoConditionInput | null,
+export type ModelUserDetailsConditionInput = {
+  firstName?: ModelStringInput | null,
+  lastName?: ModelStringInput | null,
+  email?: ModelStringInput | null,
+  profilePicture?: ModelStringInput | null,
+  country?: ModelStringInput | null,
+  state?: ModelStringInput | null,
+  city?: ModelStringInput | null,
+  bio?: ModelStringInput | null,
+  and?: Array< ModelUserDetailsConditionInput | null > | null,
+  or?: Array< ModelUserDetailsConditionInput | null > | null,
+  not?: ModelUserDetailsConditionInput | null,
 };
 
 export type ModelStringInput = {
@@ -69,104 +68,88 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
-export type ModelTaskStatusInput = {
-  eq?: TaskStatus | null,
-  ne?: TaskStatus | null,
+export type UserDetails = {
+  __typename: "UserDetails",
+  id: string,
+  firstName: string,
+  lastName: string,
+  email: string,
+  profilePicture?: string | null,
+  country?: string | null,
+  state?: string | null,
+  city?: string | null,
+  bio?: string | null,
+  createdAt: string,
+  updatedAt: string,
+};
+
+export type DeleteUserDetailsInput = {
+  id: string,
+};
+
+export type CreateTodoInput = {
+  id?: string | null,
+  name: string,
+  description: string,
+  status: string,
+};
+
+export type ModelTodoConditionInput = {
+  name?: ModelStringInput | null,
+  description?: ModelStringInput | null,
+  status?: ModelStringInput | null,
+  and?: Array< ModelTodoConditionInput | null > | null,
+  or?: Array< ModelTodoConditionInput | null > | null,
+  not?: ModelTodoConditionInput | null,
 };
 
 export type Todo = {
   __typename: "Todo",
   id: string,
-  title: string,
+  name: string,
   description: string,
-  status: TaskStatus,
-  updatedAt?: string | null,
-  createdAt?: string | null,
+  status: string,
+  createdAt: string,
+  updatedAt: string,
+  owner?: string | null,
 };
 
 export type UpdateTodoInput = {
   id: string,
-  title?: string | null,
+  name?: string | null,
   description?: string | null,
-  status?: TaskStatus | null,
-  updatedAt?: string | null,
-  createdAt?: string | null,
+  status?: string | null,
 };
 
 export type DeleteTodoInput = {
   id: string,
 };
 
-export type UpdateUserProfileInput = {
-  id: string,
-  name?: string | null,
-  email?: string | null,
+export type CreateUserDetailsInput = {
+  id?: string | null,
+  firstName: string,
+  lastName: string,
+  email: string,
   profilePicture?: string | null,
   country?: string | null,
   state?: string | null,
   city?: string | null,
   bio?: string | null,
-  config?: string | null,
-  createdAt?: string | null,
 };
 
-export type ModelUserProfileConditionInput = {
-  name?: ModelStringInput | null,
+export type ModelUserDetailsFilterInput = {
+  id?: ModelIDInput | null,
+  firstName?: ModelStringInput | null,
+  lastName?: ModelStringInput | null,
   email?: ModelStringInput | null,
   profilePicture?: ModelStringInput | null,
   country?: ModelStringInput | null,
   state?: ModelStringInput | null,
   city?: ModelStringInput | null,
   bio?: ModelStringInput | null,
-  config?: ModelStringInput | null,
-  createdAt?: ModelStringInput | null,
-  and?: Array< ModelUserProfileConditionInput | null > | null,
-  or?: Array< ModelUserProfileConditionInput | null > | null,
-  not?: ModelUserProfileConditionInput | null,
-};
-
-export type UserProfile = {
-  __typename: "UserProfile",
-  id: string,
-  name: string,
-  email: string,
-  profilePicture?: string | null,
-  country?: string | null,
-  state?: string | null,
-  city?: string | null,
-  bio?: string | null,
-  config?: string | null,
-  createdAt?: string | null,
-  updatedAt: string,
-};
-
-export type DeleteUserProfileInput = {
-  id: string,
-};
-
-export type CreateUserProfileInput = {
-  id?: string | null,
-  name: string,
-  email: string,
-  profilePicture?: string | null,
-  country?: string | null,
-  state?: string | null,
-  city?: string | null,
-  bio?: string | null,
-  config?: string | null,
-  createdAt?: string | null,
-};
-
-export type ModelTodoFilterInput = {
-  id?: ModelIDInput | null,
-  title?: ModelStringInput | null,
-  description?: ModelStringInput | null,
-  status?: ModelTaskStatusInput | null,
-  updatedAt?: ModelStringInput | null,
-  createdAt?: ModelStringInput | null,
-  and?: Array< ModelTodoFilterInput | null > | null,
-  or?: Array< ModelTodoFilterInput | null > | null,
-  not?: ModelTodoFilterInput | null,
+  and?: Array< ModelUserDetailsFilterInput | null > | null,
+  or?: Array< ModelUserDetailsFilterInput | null > | null,
+  not?: ModelUserDetailsFilterInput | null,
 };
 
 export type ModelIDInput = {
@@ -185,26 +168,26 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null,
 };
 
+export type ModelUserDetailsConnection = {
+  __typename: "ModelUserDetailsConnection",
+  items:  Array<UserDetails | null >,
+  nextToken?: string | null,
+};
+
+export type ModelTodoFilterInput = {
+  id?: ModelIDInput | null,
+  name?: ModelStringInput | null,
+  description?: ModelStringInput | null,
+  status?: ModelStringInput | null,
+  and?: Array< ModelTodoFilterInput | null > | null,
+  or?: Array< ModelTodoFilterInput | null > | null,
+  not?: ModelTodoFilterInput | null,
+};
+
 export type ModelTodoConnection = {
   __typename: "ModelTodoConnection",
   items:  Array<Todo | null >,
   nextToken?: string | null,
-};
-
-export type ModelUserProfileFilterInput = {
-  id?: ModelIDInput | null,
-  name?: ModelStringInput | null,
-  email?: ModelStringInput | null,
-  profilePicture?: ModelStringInput | null,
-  country?: ModelStringInput | null,
-  state?: ModelStringInput | null,
-  city?: ModelStringInput | null,
-  bio?: ModelStringInput | null,
-  config?: ModelStringInput | null,
-  createdAt?: ModelStringInput | null,
-  and?: Array< ModelUserProfileFilterInput | null > | null,
-  or?: Array< ModelUserProfileFilterInput | null > | null,
-  not?: ModelUserProfileFilterInput | null,
 };
 
 export enum ModelSortDirection {
@@ -213,19 +196,39 @@ export enum ModelSortDirection {
 }
 
 
-export type ModelUserProfileConnection = {
-  __typename: "ModelUserProfileConnection",
-  items:  Array<UserProfile | null >,
-  nextToken?: string | null,
+export type ModelSubscriptionUserDetailsFilterInput = {
+  firstName?: ModelSubscriptionStringInput | null,
+  lastName?: ModelSubscriptionStringInput | null,
+  email?: ModelSubscriptionStringInput | null,
+  profilePicture?: ModelSubscriptionStringInput | null,
+  country?: ModelSubscriptionStringInput | null,
+  state?: ModelSubscriptionStringInput | null,
+  city?: ModelSubscriptionStringInput | null,
+  bio?: ModelSubscriptionStringInput | null,
+  and?: Array< ModelSubscriptionUserDetailsFilterInput | null > | null,
+  or?: Array< ModelSubscriptionUserDetailsFilterInput | null > | null,
+};
+
+export type ModelSubscriptionStringInput = {
+  ne?: string | null,
+  eq?: string | null,
+  le?: string | null,
+  lt?: string | null,
+  ge?: string | null,
+  gt?: string | null,
+  contains?: string | null,
+  notContains?: string | null,
+  between?: Array< string | null > | null,
+  beginsWith?: string | null,
+  in?: Array< string | null > | null,
+  notIn?: Array< string | null > | null,
 };
 
 export type ModelSubscriptionTodoFilterInput = {
   id?: ModelSubscriptionIDInput | null,
-  title?: ModelSubscriptionStringInput | null,
+  name?: ModelSubscriptionStringInput | null,
   description?: ModelSubscriptionStringInput | null,
   status?: ModelSubscriptionStringInput | null,
-  updatedAt?: ModelSubscriptionStringInput | null,
-  createdAt?: ModelSubscriptionStringInput | null,
   and?: Array< ModelSubscriptionTodoFilterInput | null > | null,
   or?: Array< ModelSubscriptionTodoFilterInput | null > | null,
 };
@@ -245,33 +248,48 @@ export type ModelSubscriptionIDInput = {
   notIn?: Array< string | null > | null,
 };
 
-export type ModelSubscriptionStringInput = {
-  ne?: string | null,
-  eq?: string | null,
-  le?: string | null,
-  lt?: string | null,
-  ge?: string | null,
-  gt?: string | null,
-  contains?: string | null,
-  notContains?: string | null,
-  between?: Array< string | null > | null,
-  beginsWith?: string | null,
-  in?: Array< string | null > | null,
-  notIn?: Array< string | null > | null,
+export type UpdateUserDetailsMutationVariables = {
+  input: UpdateUserDetailsInput,
+  condition?: ModelUserDetailsConditionInput | null,
 };
 
-export type ModelSubscriptionUserProfileFilterInput = {
-  name?: ModelSubscriptionStringInput | null,
-  email?: ModelSubscriptionStringInput | null,
-  profilePicture?: ModelSubscriptionStringInput | null,
-  country?: ModelSubscriptionStringInput | null,
-  state?: ModelSubscriptionStringInput | null,
-  city?: ModelSubscriptionStringInput | null,
-  bio?: ModelSubscriptionStringInput | null,
-  config?: ModelSubscriptionStringInput | null,
-  createdAt?: ModelSubscriptionStringInput | null,
-  and?: Array< ModelSubscriptionUserProfileFilterInput | null > | null,
-  or?: Array< ModelSubscriptionUserProfileFilterInput | null > | null,
+export type UpdateUserDetailsMutation = {
+  updateUserDetails?:  {
+    __typename: "UserDetails",
+    id: string,
+    firstName: string,
+    lastName: string,
+    email: string,
+    profilePicture?: string | null,
+    country?: string | null,
+    state?: string | null,
+    city?: string | null,
+    bio?: string | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteUserDetailsMutationVariables = {
+  input: DeleteUserDetailsInput,
+  condition?: ModelUserDetailsConditionInput | null,
+};
+
+export type DeleteUserDetailsMutation = {
+  deleteUserDetails?:  {
+    __typename: "UserDetails",
+    id: string,
+    firstName: string,
+    lastName: string,
+    email: string,
+    profilePicture?: string | null,
+    country?: string | null,
+    state?: string | null,
+    city?: string | null,
+    bio?: string | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
 };
 
 export type CreateTodoMutationVariables = {
@@ -283,11 +301,12 @@ export type CreateTodoMutation = {
   createTodo?:  {
     __typename: "Todo",
     id: string,
-    title: string,
+    name: string,
     description: string,
-    status: TaskStatus,
-    updatedAt?: string | null,
-    createdAt?: string | null,
+    status: string,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
@@ -300,11 +319,12 @@ export type UpdateTodoMutation = {
   updateTodo?:  {
     __typename: "Todo",
     id: string,
-    title: string,
+    name: string,
     description: string,
-    status: TaskStatus,
-    updatedAt?: string | null,
-    createdAt?: string | null,
+    status: string,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
@@ -317,77 +337,82 @@ export type DeleteTodoMutation = {
   deleteTodo?:  {
     __typename: "Todo",
     id: string,
-    title: string,
+    name: string,
     description: string,
-    status: TaskStatus,
-    updatedAt?: string | null,
-    createdAt?: string | null,
+    status: string,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
-export type UpdateUserProfileMutationVariables = {
-  input: UpdateUserProfileInput,
-  condition?: ModelUserProfileConditionInput | null,
+export type CreateUserDetailsMutationVariables = {
+  input: CreateUserDetailsInput,
+  condition?: ModelUserDetailsConditionInput | null,
 };
 
-export type UpdateUserProfileMutation = {
-  updateUserProfile?:  {
-    __typename: "UserProfile",
+export type CreateUserDetailsMutation = {
+  createUserDetails?:  {
+    __typename: "UserDetails",
     id: string,
-    name: string,
+    firstName: string,
+    lastName: string,
     email: string,
     profilePicture?: string | null,
     country?: string | null,
     state?: string | null,
     city?: string | null,
     bio?: string | null,
-    config?: string | null,
-    createdAt?: string | null,
+    createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type DeleteUserProfileMutationVariables = {
-  input: DeleteUserProfileInput,
-  condition?: ModelUserProfileConditionInput | null,
+export type GetUserDetailsQueryVariables = {
+  id: string,
 };
 
-export type DeleteUserProfileMutation = {
-  deleteUserProfile?:  {
-    __typename: "UserProfile",
+export type GetUserDetailsQuery = {
+  getUserDetails?:  {
+    __typename: "UserDetails",
     id: string,
-    name: string,
+    firstName: string,
+    lastName: string,
     email: string,
     profilePicture?: string | null,
     country?: string | null,
     state?: string | null,
     city?: string | null,
     bio?: string | null,
-    config?: string | null,
-    createdAt?: string | null,
+    createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type CreateUserProfileMutationVariables = {
-  input: CreateUserProfileInput,
-  condition?: ModelUserProfileConditionInput | null,
+export type ListUserDetailsQueryVariables = {
+  filter?: ModelUserDetailsFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
 };
 
-export type CreateUserProfileMutation = {
-  createUserProfile?:  {
-    __typename: "UserProfile",
-    id: string,
-    name: string,
-    email: string,
-    profilePicture?: string | null,
-    country?: string | null,
-    state?: string | null,
-    city?: string | null,
-    bio?: string | null,
-    config?: string | null,
-    createdAt?: string | null,
-    updatedAt: string,
+export type ListUserDetailsQuery = {
+  listUserDetails?:  {
+    __typename: "ModelUserDetailsConnection",
+    items:  Array< {
+      __typename: "UserDetails",
+      id: string,
+      firstName: string,
+      lastName: string,
+      email: string,
+      profilePicture?: string | null,
+      country?: string | null,
+      state?: string | null,
+      city?: string | null,
+      bio?: string | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
   } | null,
 };
 
@@ -399,11 +424,12 @@ export type GetTodoQuery = {
   getTodo?:  {
     __typename: "Todo",
     id: string,
-    title: string,
+    name: string,
     description: string,
-    status: TaskStatus,
-    updatedAt?: string | null,
-    createdAt?: string | null,
+    status: string,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
@@ -419,205 +445,162 @@ export type ListTodosQuery = {
     items:  Array< {
       __typename: "Todo",
       id: string,
-      title: string,
+      name: string,
       description: string,
-      status: TaskStatus,
-      updatedAt?: string | null,
-      createdAt?: string | null,
+      status: string,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
     } | null >,
     nextToken?: string | null,
   } | null,
 };
 
-export type GetUserProfileQueryVariables = {
-  id: string,
+export type UserByEmailQueryVariables = {
+  email: string,
+  sortDirection?: ModelSortDirection | null,
+  filter?: ModelUserDetailsFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
 };
 
-export type GetUserProfileQuery = {
-  getUserProfile?:  {
-    __typename: "UserProfile",
+export type UserByEmailQuery = {
+  userByEmail?:  {
+    __typename: "ModelUserDetailsConnection",
+    items:  Array< {
+      __typename: "UserDetails",
+      id: string,
+      firstName: string,
+      lastName: string,
+      email: string,
+      profilePicture?: string | null,
+      country?: string | null,
+      state?: string | null,
+      city?: string | null,
+      bio?: string | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type OnCreateUserDetailsSubscriptionVariables = {
+  filter?: ModelSubscriptionUserDetailsFilterInput | null,
+  id?: string | null,
+};
+
+export type OnCreateUserDetailsSubscription = {
+  onCreateUserDetails?:  {
+    __typename: "UserDetails",
     id: string,
-    name: string,
+    firstName: string,
+    lastName: string,
     email: string,
     profilePicture?: string | null,
     country?: string | null,
     state?: string | null,
     city?: string | null,
     bio?: string | null,
-    config?: string | null,
-    createdAt?: string | null,
+    createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type ListUserProfilesQueryVariables = {
+export type OnUpdateUserDetailsSubscriptionVariables = {
+  filter?: ModelSubscriptionUserDetailsFilterInput | null,
   id?: string | null,
-  filter?: ModelUserProfileFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
-  sortDirection?: ModelSortDirection | null,
 };
 
-export type ListUserProfilesQuery = {
-  listUserProfiles?:  {
-    __typename: "ModelUserProfileConnection",
-    items:  Array< {
-      __typename: "UserProfile",
-      id: string,
-      name: string,
-      email: string,
-      profilePicture?: string | null,
-      country?: string | null,
-      state?: string | null,
-      city?: string | null,
-      bio?: string | null,
-      config?: string | null,
-      createdAt?: string | null,
-      updatedAt: string,
-    } | null >,
-    nextToken?: string | null,
+export type OnUpdateUserDetailsSubscription = {
+  onUpdateUserDetails?:  {
+    __typename: "UserDetails",
+    id: string,
+    firstName: string,
+    lastName: string,
+    email: string,
+    profilePicture?: string | null,
+    country?: string | null,
+    state?: string | null,
+    city?: string | null,
+    bio?: string | null,
+    createdAt: string,
+    updatedAt: string,
   } | null,
 };
 
-export type AppUserByEmailQueryVariables = {
-  email: string,
-  sortDirection?: ModelSortDirection | null,
-  filter?: ModelUserProfileFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
+export type OnDeleteUserDetailsSubscriptionVariables = {
+  filter?: ModelSubscriptionUserDetailsFilterInput | null,
+  id?: string | null,
 };
 
-export type AppUserByEmailQuery = {
-  appUserByEmail?:  {
-    __typename: "ModelUserProfileConnection",
-    items:  Array< {
-      __typename: "UserProfile",
-      id: string,
-      name: string,
-      email: string,
-      profilePicture?: string | null,
-      country?: string | null,
-      state?: string | null,
-      city?: string | null,
-      bio?: string | null,
-      config?: string | null,
-      createdAt?: string | null,
-      updatedAt: string,
-    } | null >,
-    nextToken?: string | null,
+export type OnDeleteUserDetailsSubscription = {
+  onDeleteUserDetails?:  {
+    __typename: "UserDetails",
+    id: string,
+    firstName: string,
+    lastName: string,
+    email: string,
+    profilePicture?: string | null,
+    country?: string | null,
+    state?: string | null,
+    city?: string | null,
+    bio?: string | null,
+    createdAt: string,
+    updatedAt: string,
   } | null,
 };
 
 export type OnCreateTodoSubscriptionVariables = {
   filter?: ModelSubscriptionTodoFilterInput | null,
+  owner?: string | null,
 };
 
 export type OnCreateTodoSubscription = {
   onCreateTodo?:  {
     __typename: "Todo",
     id: string,
-    title: string,
+    name: string,
     description: string,
-    status: TaskStatus,
-    updatedAt?: string | null,
-    createdAt?: string | null,
+    status: string,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
 export type OnUpdateTodoSubscriptionVariables = {
   filter?: ModelSubscriptionTodoFilterInput | null,
+  owner?: string | null,
 };
 
 export type OnUpdateTodoSubscription = {
   onUpdateTodo?:  {
     __typename: "Todo",
     id: string,
-    title: string,
+    name: string,
     description: string,
-    status: TaskStatus,
-    updatedAt?: string | null,
-    createdAt?: string | null,
+    status: string,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
 export type OnDeleteTodoSubscriptionVariables = {
   filter?: ModelSubscriptionTodoFilterInput | null,
+  owner?: string | null,
 };
 
 export type OnDeleteTodoSubscription = {
   onDeleteTodo?:  {
     __typename: "Todo",
     id: string,
-    title: string,
+    name: string,
     description: string,
-    status: TaskStatus,
-    updatedAt?: string | null,
-    createdAt?: string | null,
-  } | null,
-};
-
-export type OnCreateUserProfileSubscriptionVariables = {
-  filter?: ModelSubscriptionUserProfileFilterInput | null,
-  id?: string | null,
-};
-
-export type OnCreateUserProfileSubscription = {
-  onCreateUserProfile?:  {
-    __typename: "UserProfile",
-    id: string,
-    name: string,
-    email: string,
-    profilePicture?: string | null,
-    country?: string | null,
-    state?: string | null,
-    city?: string | null,
-    bio?: string | null,
-    config?: string | null,
-    createdAt?: string | null,
+    status: string,
+    createdAt: string,
     updatedAt: string,
-  } | null,
-};
-
-export type OnUpdateUserProfileSubscriptionVariables = {
-  filter?: ModelSubscriptionUserProfileFilterInput | null,
-  id?: string | null,
-};
-
-export type OnUpdateUserProfileSubscription = {
-  onUpdateUserProfile?:  {
-    __typename: "UserProfile",
-    id: string,
-    name: string,
-    email: string,
-    profilePicture?: string | null,
-    country?: string | null,
-    state?: string | null,
-    city?: string | null,
-    bio?: string | null,
-    config?: string | null,
-    createdAt?: string | null,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnDeleteUserProfileSubscriptionVariables = {
-  filter?: ModelSubscriptionUserProfileFilterInput | null,
-  id?: string | null,
-};
-
-export type OnDeleteUserProfileSubscription = {
-  onDeleteUserProfile?:  {
-    __typename: "UserProfile",
-    id: string,
-    name: string,
-    email: string,
-    profilePicture?: string | null,
-    country?: string | null,
-    state?: string | null,
-    city?: string | null,
-    bio?: string | null,
-    config?: string | null,
-    createdAt?: string | null,
-    updatedAt: string,
+    owner?: string | null,
   } | null,
 };

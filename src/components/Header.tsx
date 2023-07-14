@@ -12,14 +12,18 @@ const Header = () => {
 
   return (
     <div className="flex justify-between py-4 px-20">
-      <div className="flex items-center gap-2">
-        <Logo size="50" />
+      <Link href={"/"} className="flex items-center gap-2">
+        <Logo size="45" />
         <p className="text-[#161C2C] dark:text-white text-2xl font-semibold">
           Tasklyn
         </p>
-      </div>
-      <div className="flex items-center gap-6 text-lg uppercase">
-        <button type="button" onClick={() => setIsClick(!isClick)}>
+      </Link>
+      <div className="flex items-center gap-6">
+        <button
+          type="button"
+          onClick={() => setIsClick(!isClick)}
+          className="text-lg mr-4 dark:hover:bg-white/5 hover:bg-black/5 p-2 rounded-lg"
+        >
           <span
             className={`${
               theme === "light" ? "text-[#1694dd]" : "text-black/80"
@@ -35,7 +39,18 @@ const Header = () => {
             <BsMoonStarsFill />
           </span>
         </button>
-        <Link href={"/login"}>Login</Link>
+        <Link
+          href={"/login"}
+          className="dark:hover:bg-white/5 hover:bg-black/5 rounded-lg font-medium px-4 py-2"
+        >
+          Sign In
+        </Link>
+        <Link
+          href={"/register"}
+          className="dark:bg-white/5 bg-black/5 rounded-lg font-medium px-4 py-2"
+        >
+          Sign Up
+        </Link>
       </div>
       {isClick && (
         <>
@@ -43,7 +58,7 @@ const Header = () => {
             onClick={() => setIsClick(false)}
             className="w-screen h-screen fixed top-0 left-0"
           />
-          <div className="absolute top-20 right-24 dark:bg-[#1E293B] bg-white w-36 rounded-lg border dark:border-gray-700 text-lg font-medium">
+          <div className="absolute top-20 right-56 dark:bg-[#1E293B] bg-white w-36 rounded-lg border dark:border-gray-700 text-lg font-medium">
             <button
               type="button"
               onClick={() => changeTheme("light")}

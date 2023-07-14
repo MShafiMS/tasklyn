@@ -1,19 +1,4 @@
-enum TaskStatus {
-  TO_DO
-  IN_PROGRESS
-  COMPLETED
-}
-
-type Todo @model {
-  id: ID!
-  title: String!
-  description: String!
-  status: TaskStatus!
-  updatedAt: String
-  createdAt: String
-}
-
-type UserProfile
+type UserDetails
   @model
   @auth(
     rules: [
@@ -22,14 +7,27 @@ type UserProfile
       { allow: public, provider: iam, operations: [create] }
     ]
   ) {
-  id: ID! @primaryKey
-  name: String!
-  email: String! @index(name: "byEmail", queryField: "appUserByEmail")
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String! @index(name: "byEmail", queryField: "userByEmail")
   profilePicture: String
   country: String
   state: String
   city: String
   bio: String
-  config: AWSJSON
-  createdAt: String
+}
+
+type Todo
+  @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: private, operations: [create, read, update, delete] }
+    ]
+  ) {
+  id: ID!
+  name: String!
+  description: String!
+  status: String!
 }

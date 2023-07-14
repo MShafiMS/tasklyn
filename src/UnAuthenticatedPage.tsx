@@ -1,6 +1,12 @@
+import { Spectral } from "next/font/google";
 import { useRouter } from "next/router";
 import { PropsWithChildren, useContext, useEffect } from "react";
 import { AuthContext } from "./AuthContext";
+
+const spectral = Spectral({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 export default function UnauthenticatedPage(
   props: PropsWithChildren<Record<string, unknown>>
@@ -16,5 +22,5 @@ export default function UnauthenticatedPage(
   }, [authState, router]);
 
   // eslint-disable-next-line react/jsx-no-useless-fragment
-  return <>{children}</>;
+  return <div className={spectral.className}>{children}</div>;
 }

@@ -7,7 +7,7 @@
             "UserPoolId"
           ],
           "category": "auth",
-          "resourceName": "tasklynef5e3935"
+          "resourceName": "tasklyn0924a8ce"
         }
       ],
       "output": {
@@ -20,7 +20,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authtasklynef5e3935"
+              "userPoolId": "authtasklyn0924a8ce"
             }
           }
         }
@@ -30,7 +30,7 @@
     }
   },
   "auth": {
-    "tasklynef5e3935": {
+    "tasklyn0924a8ce": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
