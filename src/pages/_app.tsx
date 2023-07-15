@@ -7,7 +7,7 @@ import { NextComponentType } from "next";
 import type { AppProps } from "next/app";
 import React from "react";
 import config from "../aws-exports";
-Amplify.configure({ ...config, ssg: true });
+Amplify.configure({ ...config, ssr: true });
 
 type PageLayoutComponent = NextComponentType & {
   PageLayout?: React.ComponentType;
