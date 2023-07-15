@@ -2,6 +2,27 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createUserDetails = /* GraphQL */ `
+  mutation CreateUserDetails(
+    $input: CreateUserDetailsInput!
+    $condition: ModelUserDetailsConditionInput
+  ) {
+    createUserDetails(input: $input, condition: $condition) {
+      id
+      firstName
+      lastName
+      email
+      profilePicture
+      country
+      state
+      city
+      bio
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const updateUserDetails = /* GraphQL */ `
   mutation UpdateUserDetails(
     $input: UpdateUserDetailsInput!
@@ -51,6 +72,7 @@ export const createTodo = /* GraphQL */ `
   ) {
     createTodo(input: $input, condition: $condition) {
       id
+      userId
       name
       description
       status
@@ -68,6 +90,7 @@ export const updateTodo = /* GraphQL */ `
   ) {
     updateTodo(input: $input, condition: $condition) {
       id
+      userId
       name
       description
       status
@@ -85,33 +108,13 @@ export const deleteTodo = /* GraphQL */ `
   ) {
     deleteTodo(input: $input, condition: $condition) {
       id
+      userId
       name
       description
       status
       createdAt
       updatedAt
       owner
-      __typename
-    }
-  }
-`;
-export const createUserDetails = /* GraphQL */ `
-  mutation CreateUserDetails(
-    $input: CreateUserDetailsInput!
-    $condition: ModelUserDetailsConditionInput
-  ) {
-    createUserDetails(input: $input, condition: $condition) {
-      id
-      firstName
-      lastName
-      email
-      profilePicture
-      country
-      state
-      city
-      bio
-      createdAt
-      updatedAt
       __typename
     }
   }

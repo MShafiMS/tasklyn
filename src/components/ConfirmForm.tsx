@@ -34,7 +34,7 @@ const ConfirmForm = ({ email, pass }: IProps) => {
   const handleChange = (codes: any) => setCode(codes);
   if (verified) {
     return (
-      <div className="text-[#161c2c] w-[35vw] mx-auto">
+      <div className="text-[#161c2c] lg:w-[35vw] w-11/12 mx-auto">
         <div className="flex flex-col gap-4 items-center">
           <MdVerifiedUser
             size={130}
@@ -55,7 +55,7 @@ const ConfirmForm = ({ email, pass }: IProps) => {
     return (
       <form
         onSubmit={confirmSignUp}
-        className="text-[#161c2c] w-[35vw] mx-auto"
+        className="text-[#161c2c] lg:w-[35vw] w-11/12 mx-auto"
       >
         <h1 className="text-5xl font-bold mb-7 text-center">
           OTP Verification

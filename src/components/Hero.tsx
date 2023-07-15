@@ -5,8 +5,7 @@ const Hero = () => {
         xmlns="http://www.w3.org/2000/svg"
         x="0"
         y="0"
-        width={500}
-        height={500}
+        className="lg:w-[500px] lg:h-[500px] w-80 h-80"
         version="1"
         viewBox="0 0 500 500"
       >

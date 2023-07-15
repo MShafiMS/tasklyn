@@ -41,7 +41,7 @@ const Login = () => {
       <AuthLayout>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="text-[#161c2c] w-[35vw] mx-auto"
+          className="text-[#161c2c] lg:w-[35vw] w-11/12 mx-auto"
         >
           <h1 className="text-5xl font-bold mb-7">Sign In</h1>
           <div className="w-full mb-5">
@@ -105,8 +105,7 @@ const Login = () => {
               />
               <button
                 type="button"
-                onMouseDown={() => setIsShowPass(true)}
-                onMouseUp={() => setIsShowPass(false)}
+                onClick={() => setIsShowPass(!isShowPass)}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-xl text-gray-500"
               >
                 {isShowPass ? <FaRegEye /> : <FaRegEyeSlash />}

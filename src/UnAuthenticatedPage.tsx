@@ -17,7 +17,7 @@ export default function UnauthenticatedPage(
 
   useEffect(() => {
     if (authState === "authenticated") {
-      router.replace("/home");
+      router.replace("/todo");
     }
   }, [authState, router]);
 

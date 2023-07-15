@@ -42,7 +42,7 @@ const ConfirmResetForm = ({ email }: IProps) => {
   const handleChange = (codes: any) => setCode(codes);
   if (verified) {
     return (
-      <div className="text-[#161c2c] w-[35vw] mx-auto">
+      <div className="text-[#161c2c] lg:w-[35vw] w-11/12 mx-auto">
         <div className="flex flex-col gap-4 items-center">
           <MdVerifiedUser
             size={130}
@@ -63,7 +63,7 @@ const ConfirmResetForm = ({ email }: IProps) => {
     return (
       <form
         onSubmit={handleSubmit(conFirmReset)}
-        className="text-[#161c2c] w-[35vw] mx-auto"
+        className="text-[#161c2c] lg:w-[35vw] w-11/12 mx-auto"
       >
         <h1 className="text-5xl font-bold mb-7 text-center">
           OTP Verification
@@ -121,8 +121,7 @@ const ConfirmResetForm = ({ email }: IProps) => {
             />
             <button
               type="button"
-              onMouseDown={() => setIsShowPass(true)}
-              onMouseUp={() => setIsShowPass(false)}
+              onClick={() => setIsShowPass(!isShowPass)}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-xl text-gray-500"
             >
               {isShowPass ? <FaRegEye /> : <FaRegEyeSlash />}

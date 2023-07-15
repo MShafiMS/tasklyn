@@ -7,7 +7,7 @@ type UserDetails
       { allow: public, provider: iam, operations: [create] }
     ]
   ) {
-  id: ID!
+  id: ID! @primaryKey
   firstName: String!
   lastName: String!
   email: String! @index(name: "byEmail", queryField: "userByEmail")
@@ -26,7 +26,8 @@ type Todo
       { allow: private, operations: [create, read, update, delete] }
     ]
   ) {
-  id: ID!
+  id: String!
+  userId: ID! @index(name: "byUser", queryField: "getTodosByUserId")
   name: String!
   description: String!
   status: String!

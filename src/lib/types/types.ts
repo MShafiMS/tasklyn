@@ -5,3 +5,29 @@ export type ISignUpUser = {
   email: string;
   password: string;
 };
+
+export type navType = {
+  title: string;
+  path: string;
+  icon: any;
+};
+
+export type IUser = {
+  id: string;
+  username: string;
+  firstName: string;
+  lastName: string;
+  country: string;
+  state: string;
+  city: string;
+  bio: string;
+  profilePicture: string;
+};
+
+export interface Todo {
+  id: string;
+  name: string;
+  description: string;
+  userId: string;
+  status: string;
+}

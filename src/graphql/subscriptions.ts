@@ -72,6 +72,7 @@ export const onCreateTodo = /* GraphQL */ `
   ) {
     onCreateTodo(filter: $filter, owner: $owner) {
       id
+      userId
       name
       description
       status
@@ -89,6 +90,7 @@ export const onUpdateTodo = /* GraphQL */ `
   ) {
     onUpdateTodo(filter: $filter, owner: $owner) {
       id
+      userId
       name
       description
       status
@@ -106,6 +108,7 @@ export const onDeleteTodo = /* GraphQL */ `
   ) {
     onDeleteTodo(filter: $filter, owner: $owner) {
       id
+      userId
       name
       description
       status

@@ -1,10 +1,8 @@
 import UserLayout from "@TasklynAlias/components/Layout/UserLayout";
 import Soon from "@TasklynAlias/components/Soon";
 
-const Home = () => {
-  return <Soon title="Dashboard" />;
+const Notes = () => {
+  return <Soon title="Notes" />;
 };
-
-Home.PageLayout = UserLayout;
-
-export default Home;
+Notes.PageLayout = UserLayout;
+export default Notes;

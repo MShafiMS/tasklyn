@@ -3,7 +3,7 @@ const Logo = ({ size, auth }: { size?: string; auth?: boolean }) => {
     <div>
       <svg
         width={size || "206"}
-        height="auto"
+        height={size || "219"}
         viewBox="0 0 206 219"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -18,9 +18,11 @@ const Logo = ({ size, auth }: { size?: string; auth?: boolean }) => {
           width="40"
           height="19"
           rx="9.5"
-          className={`dark:fill-[#161C2C] fill-white ${
-            auth && "fill-[#161c2c]"
-          }`}
+          className={
+            auth
+              ? "lg:fill-[#161c2c] fill-white"
+              : "dark:fill-[#161C2C] fill-white"
+          }
         />
         <rect
           x="42"
@@ -28,9 +30,11 @@ const Logo = ({ size, auth }: { size?: string; auth?: boolean }) => {
           width="115"
           height="19"
           rx="9.5"
-          className={`dark:fill-[#161C2C] fill-white ${
-            auth && "fill-[#161c2c]"
-          }`}
+          className={
+            auth
+              ? "lg:fill-[#161c2c] fill-white"
+              : "dark:fill-[#161C2C] fill-white"
+          }
         />
         <rect
           x="42"
@@ -38,9 +42,11 @@ const Logo = ({ size, auth }: { size?: string; auth?: boolean }) => {
           width="115"
           height="19"
           rx="9.5"
-          className={`dark:fill-[#161C2C] fill-white ${
-            auth && "fill-[#161c2c]"
-          }`}
+          className={
+            auth
+              ? "lg:fill-[#161c2c] fill-white"
+              : "dark:fill-[#161C2C] fill-white"
+          }
         />
         <rect
           x="42"
@@ -48,9 +54,11 @@ const Logo = ({ size, auth }: { size?: string; auth?: boolean }) => {
           width="90"
           height="19"
           rx="9.5"
-          className={`dark:fill-[#161C2C] fill-white ${
-            auth && "fill-[#161c2c]"
-          }`}
+          className={
+            auth
+              ? "lg:fill-[#161c2c] fill-white"
+              : "dark:fill-[#161C2C] fill-white"
+          }
         />
         <defs>
           <linearGradient
@@ -61,8 +69,8 @@ const Logo = ({ size, auth }: { size?: string; auth?: boolean }) => {
             y2="219"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#55CBF1" />
-            <stop offset="1" stop-color="#2E9CDB" />
+            <stop stopColor="#55CBF1" />
+            <stop offset="1" stopColor="#2E9CDB" />
           </linearGradient>
         </defs>
       </svg>
