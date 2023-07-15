@@ -1,10 +1,14 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const Soon = ({ title }: { title: string }) => {
   return (
     <div className="dark:text-gray-300 h-screen flex items-center justify-center">
       <div className="flex flex-col justify-between lg:flex-row-reverse">
-        <img
+        <Image
+          width={1000}
+          height={1000}
+          alt="img"
           src={
             "https://webb-school-mission-2022.vercel.app/static/media/underconstruction.7f2ca68c6cc87e5e08f4.png"
           }
