@@ -12,9 +12,10 @@ import { FaTasks } from "react-icons/fa";
 import { FiMonitor } from "react-icons/fi";
 import { IoColorPaletteOutline, IoLogOutOutline } from "react-icons/io5";
 import { MdSpaceDashboard } from "react-icons/md";
+import { VscClose } from "react-icons/vsc";
 import Logo from "./Logo";
 
-const UserHead = () => {
+const UserHead = ({ close }: { close?: () => void }) => {
   const { changeTheme, theme } = useTheme();
   const [isClick, setIsClick] = useState(false);
   const [user, setUser] =
@@ -41,11 +42,19 @@ const UserHead = () => {
 
   return (
     <div className="relative py-6 w-80 lg:flex flex-col bg-black/5 dark:bg-white/5 min-h-screen">
-      <div className="flex items-center gap-2 px-4">
-        <Logo size="45" />
-        <p className="text-[#161C2C] dark:text-white text-2xl font-semibold">
-          Tasklyn
-        </p>
+      <div className="flex justify-between items-center w-full">
+        <div className="flex items-center gap-2 px-4">
+          <Logo size="45" />
+          <p className="text-[#161C2C] dark:text-white text-2xl font-semibold">
+            Tasklyn
+          </p>
+        </div>
+        <button
+          onClick={close}
+          className="p-1.5 mr-3 lg:hidden bg-white/5 rounded"
+        >
+          <VscClose className="text-2xl" />
+        </button>
       </div>
       <div className="my-6 mx-1">
         <Link
