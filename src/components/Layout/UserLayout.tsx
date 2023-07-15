@@ -13,7 +13,10 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
             nav ? "left-0 lg:left-0" : "lg:left-0 -left-[500px]"
           } dark:bg-[#161C2C] bg-white z-30`}
         >
-          <UserHead close={() => setNav(false)} />
+          <div className="w-80 h-screen lg:block hidden" />
+          <div className="lg:fixed top-0 left-0">
+            <UserHead close={() => setNav(false)} />
+          </div>
         </div>
         {nav && (
           <div
@@ -22,7 +25,7 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
           />
         )}
         <div className="w-full">
-          <div className="fixed lg:hidden z-10 top-0 left-0 w-full bg-white/5 flex justify-center">
+          <div className="fixed lg:hidden z-10 top-0 left-0 w-full bg-gray-200 dark:bg-[#20273D] flex justify-center">
             <div className="flex justify-between w-full py-4 gap-2 px-4">
               <p className="text-[#161C2C] dark:text-white text-2xl font-semibold">
                 Tasklyn

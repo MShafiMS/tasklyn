@@ -30,4 +30,6 @@ export interface Todo {
   description: string;
   userId: string;
   status: string;
+  createdAt: string;
+  updatedAt: string;
 }

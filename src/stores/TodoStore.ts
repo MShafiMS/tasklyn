@@ -13,6 +13,8 @@ const TodoModel = types.model("TodoModel", {
   description: types.string,
   userId: types.string,
   status: types.string,
+  createdAt: types.string,
+  updatedAt: types.string,
 });
 
 const TodoStore = types

@@ -1,5 +1,6 @@
 import { Todo } from "@TasklynAlias/lib/types/types";
 import { ITodoStore, useTodoStore } from "@TasklynAlias/stores/TodoStore";
+import { getTimeAgo } from "@TasklynAlias/utils";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { BiSolidChevronDown } from "react-icons/bi";
@@ -30,15 +31,16 @@ const EditTodoModal = ({ show, close }: IProps) => {
     reset,
   } = useForm<Todo>();
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: Todo) => {
     try {
       const updatedTodo = {
         id: todo?.id,
-        ...data,
+        name: data?.name || todo?.name,
+        description: data?.description || todo?.description,
         status: status || todo?.status,
       };
       setLoading(true);
-      await todoStore.updateTodo(updatedTodo);
+      await todoStore.updateTodo(updatedTodo as Todo);
       setLoading(false);
       reset();
       todoStore.fetchTodos();
@@ -112,9 +114,7 @@ const EditTodoModal = ({ show, close }: IProps) => {
             <input
               type="text"
               placeholder={errors.name?.message || "Title"}
-              {...register("name", {
-                required: { value: true, message: "Title is required" },
-              })}
+              {...register("name")}
               defaultValue={todo?.name}
               className={`lg:w-96 w-80 placeholder:uppercase font-medium outline-none text-2xl px-4 py-2 rounded-lg bg-gray-300/50 dark:bg-gray-300/5 ${
                 errors.name?.type === "required" &&
@@ -185,9 +185,7 @@ const EditTodoModal = ({ show, close }: IProps) => {
           </div>
           <textarea
             id=""
-            {...register("description", {
-              required: { value: true, message: "Description is required" },
-            })}
+            {...register("description")}
             defaultValue={todo?.description}
             placeholder={errors.description?.message || "Description"}
             className={`w-full placeholder:uppercase outline-none rounded-lg bg-gray-300/30 dark:bg-gray-400/5 px-4 py-3 h-56 resize-none ${
@@ -195,7 +193,11 @@ const EditTodoModal = ({ show, close }: IProps) => {
               "placeholder:text-red-500/60"
             }`}
           ></textarea>
-          <div className="flex justify-end">
+          <div className="flex justify-between items-end">
+            <div className="text-sm space-y-2">
+              <p>Created {getTimeAgo(todo?.createdAt as string)}</p>
+              <p>Updated {getTimeAgo(todo?.updatedAt as string)}</p>
+            </div>
             <button
               type="submit"
               disabled={loading}
