@@ -4,6 +4,7 @@ This is a simple Todo site built using Next.js, Tailwind CSS, Mobx State Tree, a
 
 ## Features
 
+- Authentication
 - Create new todos
 - Update existing todos
 - Delete todos
