@@ -2,8 +2,8 @@ import UnauthenticatedPage from "@TasklynAlias/UnAuthenticatedPage";
 import ConfirmForm from "@TasklynAlias/components/ConfirmForm";
 import AuthLayout from "@TasklynAlias/components/Layout/AuthLayout";
 import SignUpForm from "@TasklynAlias/components/SignUpForm";
+import { createUser } from "@TasklynAlias/lib/services/user.service";
 import { ISignUpUser } from "@TasklynAlias/lib/types/types";
-import { createUser } from "@TasklynAlias/services/user.service";
 import { Auth } from "aws-amplify";
 import { useState } from "react";
 

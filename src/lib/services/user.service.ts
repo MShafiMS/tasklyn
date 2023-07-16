@@ -1,8 +1,8 @@
 import { getUserDetails } from "@TasklynAlias/graphql/queries";
 import { GRAPHQL_AUTH_MODE, GraphQLQuery } from "@aws-amplify/api";
 import { API, Auth } from "aws-amplify";
-import { CreateUserDetailsInput, GetUserDetailsQuery } from "../API";
-import { createUserDetails } from "../graphql/mutations";
+import { CreateUserDetailsInput, GetUserDetailsQuery } from "../../API";
+import { createUserDetails } from "../../graphql/mutations";
 
 export const createUser = async <T>(user: T) => {
   try {

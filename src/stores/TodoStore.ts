@@ -5,7 +5,7 @@ import {
   deleteTodoData,
   fetchTodos,
   updateTodoData,
-} from "../services/todo.service";
+} from "../lib/services/todo.service";
 
 const TodoModel = types.model("TodoModel", {
   id: types.identifier,

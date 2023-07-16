@@ -119,3 +119,54 @@ export const onDeleteTodo = /* GraphQL */ `
     }
   }
 `;
+export const onCreateNote = /* GraphQL */ `
+  subscription OnCreateNote(
+    $filter: ModelSubscriptionNoteFilterInput
+    $owner: String
+  ) {
+    onCreateNote(filter: $filter, owner: $owner) {
+      id
+      userId
+      title
+      description
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onUpdateNote = /* GraphQL */ `
+  subscription OnUpdateNote(
+    $filter: ModelSubscriptionNoteFilterInput
+    $owner: String
+  ) {
+    onUpdateNote(filter: $filter, owner: $owner) {
+      id
+      userId
+      title
+      description
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onDeleteNote = /* GraphQL */ `
+  subscription OnDeleteNote(
+    $filter: ModelSubscriptionNoteFilterInput
+    $owner: String
+  ) {
+    onDeleteNote(filter: $filter, owner: $owner) {
+      id
+      userId
+      title
+      description
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;

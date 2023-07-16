@@ -32,3 +32,17 @@ type Todo
   description: String!
   status: String!
 }
+
+type Note
+  @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: private, operations: [create, read, update, delete] }
+    ]
+  ) {
+  id: String!
+  userId: ID! @index(name: "byUser", queryField: "getNotesByUserId")
+  title: String!
+  description: String!
+}

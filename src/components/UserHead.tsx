@@ -1,6 +1,6 @@
 import useTheme from "@TasklynAlias/hooks/useTheme";
+import { getCurrentUser } from "@TasklynAlias/lib/services/user.service";
 import { navType } from "@TasklynAlias/lib/types/types";
-import { getCurrentUser } from "@TasklynAlias/services/user.service";
 import { Auth } from "aws-amplify";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -61,7 +61,7 @@ const UserHead = ({ close }: { close?: () => void }) => {
           href={"/profile"}
           className={`px-4 block py-2 mx-1 rounded-lg mb-6 bg-black/5 hover:bg-black/10 dark:bg-white/5 hover:dark:bg-white/10 ${
             params === "/profile"
-              ? "dark:text-green-400 text-green-600 shadow-lg dark:shadow-green-500/40 shadow-green-500/30 duration-200"
+              ? "dark:text-blue-400 text-blue-500 shadow-lg dark:shadow-blue-500/40 shadow-blue-500/30 duration-200"
               : ""
           }`}
         >

@@ -157,6 +157,44 @@ export type DeleteTodoInput = {
   id: string,
 };
 
+export type CreateNoteInput = {
+  id?: string | null,
+  userId: string,
+  title: string,
+  description: string,
+};
+
+export type ModelNoteConditionInput = {
+  userId?: ModelIDInput | null,
+  title?: ModelStringInput | null,
+  description?: ModelStringInput | null,
+  and?: Array< ModelNoteConditionInput | null > | null,
+  or?: Array< ModelNoteConditionInput | null > | null,
+  not?: ModelNoteConditionInput | null,
+};
+
+export type Note = {
+  __typename: "Note",
+  id: string,
+  userId: string,
+  title: string,
+  description: string,
+  createdAt: string,
+  updatedAt: string,
+  owner?: string | null,
+};
+
+export type UpdateNoteInput = {
+  id: string,
+  userId?: string | null,
+  title?: string | null,
+  description?: string | null,
+};
+
+export type DeleteNoteInput = {
+  id: string,
+};
+
 export type ModelUserDetailsFilterInput = {
   id?: ModelIDInput | null,
   firstName?: ModelStringInput | null,
@@ -198,6 +236,22 @@ export type ModelTodoFilterInput = {
 export type ModelTodoConnection = {
   __typename: "ModelTodoConnection",
   items:  Array<Todo | null >,
+  nextToken?: string | null,
+};
+
+export type ModelNoteFilterInput = {
+  id?: ModelStringInput | null,
+  userId?: ModelIDInput | null,
+  title?: ModelStringInput | null,
+  description?: ModelStringInput | null,
+  and?: Array< ModelNoteFilterInput | null > | null,
+  or?: Array< ModelNoteFilterInput | null > | null,
+  not?: ModelNoteFilterInput | null,
+};
+
+export type ModelNoteConnection = {
+  __typename: "ModelNoteConnection",
+  items:  Array<Note | null >,
   nextToken?: string | null,
 };
 
@@ -252,6 +306,15 @@ export type ModelSubscriptionIDInput = {
   beginsWith?: string | null,
   in?: Array< string | null > | null,
   notIn?: Array< string | null > | null,
+};
+
+export type ModelSubscriptionNoteFilterInput = {
+  id?: ModelSubscriptionStringInput | null,
+  userId?: ModelSubscriptionIDInput | null,
+  title?: ModelSubscriptionStringInput | null,
+  description?: ModelSubscriptionStringInput | null,
+  and?: Array< ModelSubscriptionNoteFilterInput | null > | null,
+  or?: Array< ModelSubscriptionNoteFilterInput | null > | null,
 };
 
 export type CreateUserDetailsMutationVariables = {
@@ -371,6 +434,60 @@ export type DeleteTodoMutation = {
     name: string,
     description: string,
     status: string,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type CreateNoteMutationVariables = {
+  input: CreateNoteInput,
+  condition?: ModelNoteConditionInput | null,
+};
+
+export type CreateNoteMutation = {
+  createNote?:  {
+    __typename: "Note",
+    id: string,
+    userId: string,
+    title: string,
+    description: string,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type UpdateNoteMutationVariables = {
+  input: UpdateNoteInput,
+  condition?: ModelNoteConditionInput | null,
+};
+
+export type UpdateNoteMutation = {
+  updateNote?:  {
+    __typename: "Note",
+    id: string,
+    userId: string,
+    title: string,
+    description: string,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type DeleteNoteMutationVariables = {
+  input: DeleteNoteInput,
+  condition?: ModelNoteConditionInput | null,
+};
+
+export type DeleteNoteMutation = {
+  deleteNote?:  {
+    __typename: "Note",
+    id: string,
+    userId: string,
+    title: string,
+    description: string,
     createdAt: string,
     updatedAt: string,
     owner?: string | null,
@@ -524,6 +641,71 @@ export type GetTodosByUserIdQuery = {
   } | null,
 };
 
+export type GetNoteQueryVariables = {
+  id: string,
+};
+
+export type GetNoteQuery = {
+  getNote?:  {
+    __typename: "Note",
+    id: string,
+    userId: string,
+    title: string,
+    description: string,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type ListNotesQueryVariables = {
+  filter?: ModelNoteFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListNotesQuery = {
+  listNotes?:  {
+    __typename: "ModelNoteConnection",
+    items:  Array< {
+      __typename: "Note",
+      id: string,
+      userId: string,
+      title: string,
+      description: string,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type GetNotesByUserIdQueryVariables = {
+  userId: string,
+  sortDirection?: ModelSortDirection | null,
+  filter?: ModelNoteFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type GetNotesByUserIdQuery = {
+  getNotesByUserId?:  {
+    __typename: "ModelNoteConnection",
+    items:  Array< {
+      __typename: "Note",
+      id: string,
+      userId: string,
+      title: string,
+      description: string,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
 export type OnCreateUserDetailsSubscriptionVariables = {
   filter?: ModelSubscriptionUserDetailsFilterInput | null,
   id?: string | null,
@@ -641,6 +823,60 @@ export type OnDeleteTodoSubscription = {
     name: string,
     description: string,
     status: string,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type OnCreateNoteSubscriptionVariables = {
+  filter?: ModelSubscriptionNoteFilterInput | null,
+  owner?: string | null,
+};
+
+export type OnCreateNoteSubscription = {
+  onCreateNote?:  {
+    __typename: "Note",
+    id: string,
+    userId: string,
+    title: string,
+    description: string,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type OnUpdateNoteSubscriptionVariables = {
+  filter?: ModelSubscriptionNoteFilterInput | null,
+  owner?: string | null,
+};
+
+export type OnUpdateNoteSubscription = {
+  onUpdateNote?:  {
+    __typename: "Note",
+    id: string,
+    userId: string,
+    title: string,
+    description: string,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type OnDeleteNoteSubscriptionVariables = {
+  filter?: ModelSubscriptionNoteFilterInput | null,
+  owner?: string | null,
+};
+
+export type OnDeleteNoteSubscription = {
+  onDeleteNote?:  {
+    __typename: "Note",
+    id: string,
+    userId: string,
+    title: string,
+    description: string,
     createdAt: string,
     updatedAt: string,
     owner?: string | null,
