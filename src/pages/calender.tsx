@@ -7,13 +7,13 @@ import FullCalendar from "@fullcalendar/react";
 import { observer } from "mobx-react-lite";
 import { useEffect, useState } from "react";
 
-const Calender = () => {
-  return <CalenderObs />;
+const Calendar = () => {
+  return <CalendarObs />;
 };
-Calender.PageLayout = UserLayout;
-export default Calender;
+Calendar.PageLayout = UserLayout;
+export default Calendar;
 
-const CalenderObs = observer(() => {
+const CalendarObs = observer(() => {
   const [todoEdit, setTodoEdit] = useState("");
   const todoStore = useTodoStore();
   const data = [
@@ -47,7 +47,7 @@ const CalenderObs = observer(() => {
     <div className="mx-6 my-6">
       <EditTodoModal show={todoEdit} close={() => setTodoEdit("")} />
       <h1 className="lg:text-5xl text-4xl font-medium text-[#0d101a] dark:text-gray-200 mb-4">
-        Calender
+        Calendar
       </h1>
       <FullCalendar
         plugins={[dayGridPlugin]}
