@@ -21,7 +21,7 @@ const TodoCard = ({ item, setItem }: IProps) => {
       <p className="my-3">{item.description.slice(0, 50)}</p>
       <div className="flex items-end justify-between">
         <p className="text-xs uppercase font-medium text-gray-400 dark:text-gray-500">
-          Last Updated: {formattedDateTime(item.updatedAt)}
+          Last Update: {formattedDateTime(item.updatedAt)}
         </p>
         {item.status === "TO DO" && <TbProgressAlert className="text-2xl" />}
         {item.status === "IN PROGRESS" && (

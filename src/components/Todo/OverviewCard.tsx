@@ -31,7 +31,7 @@ const OverviewCard = ({ item, setItem, index, setData }: IProps) => {
         onClick={() => setItem(item.id)}
         className="w-full lg:block hidden text-xs uppercase font-medium text-gray-400 dark:text-gray-500"
       >
-        Last Updated: {formattedDateTime(item.updatedAt)}
+        Last Update: {formattedDateTime(item.updatedAt)}
       </p>
       <div className="relative w-80 hidden lg:flex justify-end">
         <button
