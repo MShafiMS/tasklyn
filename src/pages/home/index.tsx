@@ -24,9 +24,24 @@ export default Overview;
 
 const AllTodos = observer(() => {
   const [showModal, setShowModal] = useState(false);
+  const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState("");
   const [todoEdit, setTodoEdit] = useState("");
   const [data, setData] = useState<Todo>(null as unknown as Todo);
   const todoStore: ITodoStore = useTodoStore();
+
+  const filtered =
+    (filter === "todo" &&
+      todoStore.todos.filter((todo) => todo.status === "TO DO")) ||
+    (filter === "progress" &&
+      todoStore.todos.filter((todo) => todo.status === "IN PROGRESS")) ||
+    (filter === "done" &&
+      todoStore.todos.filter((todo) => todo.status === "COMPLETED")) ||
+    todoStore.todos;
+
+  const searched = filtered.filter((s) =>
+    s.name?.toLowerCase().includes(search)
+  );
 
   useEffect(() => {
     todoStore.fetchTodos();
@@ -57,8 +72,25 @@ const AllTodos = observer(() => {
         <CreateTodoModal show={showModal} close={() => setShowModal(false)} />
         <EditTodoModal show={todoEdit} close={() => setTodoEdit("")} />
         <div className="px-3 py-3 rounded my-8 bg-black/10 dark:bg-white/5">
+          <div className="flex mb-2 justify-between items-center">
+            <input
+              type="text"
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search Issue"
+              className="outline-none dark:bg-[#161C2C] bg-white py-1 px-2"
+            />
+            <select
+              onChange={(e) => setFilter(e.target.value)}
+              className="dark:bg-[#161C2C] bg-white py-1 px-2 outline-none"
+            >
+              <option value="all">All</option>
+              <option value="todo">To Do</option>
+              <option value="progress">In Progress</option>
+              <option value="done">Completed</option>
+            </select>
+          </div>
           <div className="flex flex-col gap-3">
-            {todoStore?.todos?.map((item: Todo, index: number) => (
+            {(searched || filtered)?.map((item: Todo, index: number) => (
               <div key={item.id} className="relative">
                 <OverviewCard
                   item={item}

@@ -17,7 +17,7 @@ interface IProps {
 
 const OverviewCard = ({ item, setItem, index, setData }: IProps) => {
   return (
-    <div className="cursor-pointer w-full flex justify-between items-center bg-white hover:bg-opacity-50 dark:dark:bg-[#161C2C] hover:dark:bg-opacity-50 border border-black/20 dark:border-white/10 px-3 py-2">
+    <div className="cursor-pointer w-full flex justify-between items-center bg-white hover:bg-opacity-50 dark:bg-[#161C2C] hover:dark:bg-opacity-50 border border-black/20 dark:border-white/10 px-3 py-2">
       <div
         onClick={() => setItem(item.id)}
         className="flex w-full items-center gap-2 text-lg dark:font-thin"
