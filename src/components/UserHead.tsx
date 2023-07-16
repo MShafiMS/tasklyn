@@ -31,7 +31,7 @@ const UserHead = ({ close }: { close?: () => void }) => {
 
   const navLinks = [
     { title: "Overview", path: "/home", icon: <MdSpaceDashboard /> },
-    { title: "Todos", path: "/todo", icon: <FaTasks /> },
+    { title: "Board", path: "/todo", icon: <FaTasks /> },
     { title: "Notes", path: "/notes", icon: <BiNotepad /> },
     { title: "Calender", path: "/calender", icon: <BiCalendarAlt /> },
   ];
