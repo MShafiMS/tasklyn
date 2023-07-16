@@ -7,6 +7,7 @@ import { Todo } from "@TasklynAlias/lib/types/types";
 import { ITodoStore, useTodoStore } from "@TasklynAlias/stores/TodoStore";
 import { observer } from "mobx-react-lite";
 import { useEffect, useState } from "react";
+import { BsSearch } from "react-icons/bs";
 
 const Overview = () => {
   return (
@@ -73,12 +74,15 @@ const AllTodos = observer(() => {
         <EditTodoModal show={todoEdit} close={() => setTodoEdit("")} />
         <div className="px-3 py-3 rounded my-8 bg-black/10 dark:bg-white/5">
           <div className="flex mb-2 justify-between items-center">
-            <input
-              type="text"
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search Issue"
-              className="outline-none dark:bg-[#161C2C] bg-white py-1 px-2"
-            />
+            <div className="relative">
+              <input
+                type="text"
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search Issue"
+                className="outline-none w-40 dark:bg-[#161C2C] bg-white py-1 px-2"
+              />
+              <BsSearch className="absolute right-2 top-1/2 -translate-y-1/2" />
+            </div>
             <select
               onChange={(e) => setFilter(e.target.value)}
               className="dark:bg-[#161C2C] bg-white py-1 px-2 outline-none"
