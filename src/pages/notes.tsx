@@ -42,7 +42,7 @@ const AllNotes = observer(() => {
       </h1>
       <CreateNoteModal show={showModal} close={() => setShowModal(false)} />
       <EditNoteModal show={showEdit} close={() => setShowEdit("")} />
-      <div className="mt-6 grid gap-4 lg:gap-8 md:grid-cols-3 grid-cols-2 lg:grid-cols-4 items-center">
+      <div className="mt-6 grid gap-2 lg:gap-8 md:grid-cols-3 grid-cols-2 lg:grid-cols-4 items-center">
         {noteItems?.map((note: Note) => (
           <NoteCard
             key={note.id}
@@ -52,7 +52,7 @@ const AllNotes = observer(() => {
         ))}
         <div
           onClick={() => setShowModal(true)}
-          className={`cursor-pointer w-48 ${
+          className={`cursor-pointer w-44 lg:w-48 ${
             noteItems.length ? "h-full" : "h-52"
           } hover:text-[#2E9CDB] hover:dark:text-[#55CBF1] text-[#161C2C]/60 dark:text-gray-400 dark:bg-white/5 bg-black/5 hover:dark:bg-white/10 hover:bg-black/10 rounded-xl flex flex-col items-center justify-center`}
         >
