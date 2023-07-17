@@ -80,12 +80,13 @@ const EditTodoModal = ({ show, close }: IProps) => {
     <div
       className={`fixed z-50 left-1/2 ${
         show ? "top-1/2" : "top-[5000px]"
-      } w-screen h-screen -translate-y-1/2 -translate-x-1/2 bg-gray-300/40 dark:bg-[#20273d]/40 flex items-center justify-center`}
+      } w-screen h-screen -translate-y-1/2 -translate-x-1/2 bg-gray-300/70 dark:bg-[#20273d]/70 flex items-center justify-center`}
     >
       <div
         onClick={() => {
           close();
           setStatus("");
+          setShowStatus(false);
         }}
         className="w-full h-full absolute z-10"
       />
@@ -103,6 +104,7 @@ const EditTodoModal = ({ show, close }: IProps) => {
             onClick={() => {
               close();
               setStatus("");
+              setShowStatus(false);
             }}
             className="p-1.5 rounded text-xl dark:hover:bg-white/5 hover:bg-black/10"
           >
@@ -156,7 +158,7 @@ const EditTodoModal = ({ show, close }: IProps) => {
                 >
                   {statusData.map((item) => (
                     <>
-                      {item.title !== status && (
+                      {item.title !== (status || todo?.status) && (
                         <button
                           onClick={() => {
                             setStatus(item.title);

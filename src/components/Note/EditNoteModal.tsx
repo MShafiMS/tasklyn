@@ -66,7 +66,7 @@ const EditNoteModal = ({ show, close }: IProps) => {
     <div
       className={`fixed z-50 left-1/2 ${
         show ? "top-1/2" : "top-[5000px]"
-      } w-screen h-screen -translate-y-1/2 -translate-x-1/2 bg-gray-300/40 dark:bg-[#20273d]/40 flex items-center justify-center`}
+      } w-screen h-screen -translate-y-1/2 -translate-x-1/2 bg-gray-300/70 dark:bg-[#20273d]/70 flex items-center justify-center`}
     >
       <div
         onClick={() => {
