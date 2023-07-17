@@ -68,7 +68,7 @@ export const fetchTodos = async () => {
     if (!data) return;
     return data.getTodosByUserId?.items || [];
   } catch (error) {
-    console.error("@todo.service::updateTodoData::error", error);
+    console.error("@todo.service::fetchTodos::error", error);
     throw error;
   }
 };

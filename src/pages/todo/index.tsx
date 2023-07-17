@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 const Todos = () => {
   return (
-    <div className="mx-6 mt-6">
+    <div className="m-6">
       <h1 className="lg:text-5xl text-4xl font-medium text-[#0d101a] dark:text-gray-200">
         Board
       </h1>

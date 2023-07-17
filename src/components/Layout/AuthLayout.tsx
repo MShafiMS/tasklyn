@@ -11,7 +11,7 @@ const AuthLayout = ({
   title?: string;
 }) => {
   return (
-    <div className="lg:flex">
+    <div className="lg:flex bg-white h-screen">
       <div className="flex flex-col w-full lg:bg-[#161C2C] lg:h-screen text-gray-200">
         <Link
           href={"/"}

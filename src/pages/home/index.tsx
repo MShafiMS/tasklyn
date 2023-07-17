@@ -11,7 +11,7 @@ import { BsSearch } from "react-icons/bs";
 
 const Overview = () => {
   return (
-    <div className="mx-6 mt-6">
+    <div className="m-6">
       <h1 className="lg:text-5xl text-4xl font-medium text-[#0d101a] dark:text-gray-200">
         Overview
       </h1>
