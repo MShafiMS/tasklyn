@@ -33,14 +33,14 @@ const AllTodos = observer(() => {
 
   const filtered =
     (filter === "todo" &&
-      todoStore.todos.filter((todo) => todo.status === "TO DO")) ||
+      todoStore.todos.filter((todo: Todo) => todo.status === "TO DO")) ||
     (filter === "progress" &&
-      todoStore.todos.filter((todo) => todo.status === "IN PROGRESS")) ||
+      todoStore.todos.filter((todo: Todo) => todo.status === "IN PROGRESS")) ||
     (filter === "done" &&
-      todoStore.todos.filter((todo) => todo.status === "COMPLETED")) ||
+      todoStore.todos.filter((todo: Todo) => todo.status === "COMPLETED")) ||
     todoStore.todos;
 
-  const searched = filtered.filter((s) =>
+  const searched = filtered.filter((s: Todo) =>
     s.name?.toLowerCase().includes(search)
   );
 
